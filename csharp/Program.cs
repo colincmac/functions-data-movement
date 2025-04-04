@@ -39,8 +39,7 @@ builder.Services.AddSingleton(sp =>
     // return new ShareFileClient(uri, credential);
 
     var client = new ShareServiceClient(uri, credential) ;
-    return client.GenerateAccountSasUri()
-        .GetDirectoryClient(options.DirectoryName);
+    return client.GetShareClient(options.ShareName);
 });
 
 
